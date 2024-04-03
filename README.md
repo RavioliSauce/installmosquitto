@@ -4,7 +4,7 @@
 This script automates the process of installing Mosquitto, an open-source MQTT broker, on your Linux system and setting up a user account for the MQTT service.
 
 ## Prerequisites
-- Linux distribution with `apt-get`
+- Linux distribution with `apt-get` (Debian, Ubuntu, etc.)
 - `sudo` privileges
 
 ## Installation Instructions

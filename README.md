@@ -8,10 +8,16 @@ This script automates the process of installing Mosquitto, an open-source MQTT b
 - `sudo` privileges
 
 ## Installation Instructions
-1. Clone this repository: `git clone [repository URL]`
-2. Navigate to the script directory: `cd [script directory]`
-3. Make the script executable: `chmod +x installmosquitto.sh`
-4. Run the script: `sudo ./installmosquitto.sh`
+1. Clone this repository
+2. Navigate to the script directory
+3. Make the script executable
+4. Run the script
+```bash
+git clone https://github.com/RavioliSauce/installmosquitto.git
+cd installmosquitto
+chmod +x installmosquitto.sh
+sudo ./installmosquitto.sh
+```
 ### OR
 1. Copy contents of the script to a new file on your system
 2. Make the script executable: `chmod +x [script name]`

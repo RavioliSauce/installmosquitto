@@ -31,9 +31,14 @@ sudo mosquitto_passwd -b /etc/mosquitto/passwd $MQTT_USER $MQTT_PASS
 echo "allow_anonymous false" | sudo tee -a /etc/mosquitto/mosquitto.conf
 echo "password_file /etc/mosquitto/passwd" | sudo tee -a /etc/mosquitto/mosquitto.conf
 
-# uncomment next line to change default port from 1883 to 8883 (or any other port you want)
-# echo "listener 8883" | sudo tee -a /etc/mosquitto/mosquitto.conf
-
+# check if user wants to change the default port
+echo "Do you want to change the default port from 1883 to something else? (y/n)"
+read CHANGE_PORT
+if [ "$CHANGE_PORT" != "${CHANGE_PORT#[Yy]}" ]; then
+    echo "Enter the new port number:"
+    read NEW_PORT
+    echo "listener $NEW_PORT" | sudo tee -a /etc/mosquitto/mosquitto.conf
+fi
 # restart mosquitto
 sudo systemctl restart mosquitto
 

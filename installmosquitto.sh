@@ -2,6 +2,13 @@
 
 # updates and installs mosquitto
 sudo apt-get update
+
+# check if mosquitto is already installed
+if dpkg -l | grep -q mosquitto; then
+    echo "Mosquitto is already installed."
+    exit 0
+fi
+
 sudo apt-get install -y mosquitto mosquitto-clients
 
 # start and enable mosquitto
